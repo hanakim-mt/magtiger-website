@@ -424,23 +424,31 @@
     nav.top .menu {
       display: none;
       position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.97);
-      backdrop-filter: blur(16px);
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      height: 100dvh;
+      background: #000000;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 32px;
+      gap: 28px;
       z-index: 99;
-      padding: 80px 24px;
+      padding: 80px 24px 40px;
+      overflow-y: auto;
     }
     nav.top .menu.open {
       display: flex;
     }
     nav.top .menu a {
-      font-size: 14px;
+      font-size: 16px;
       letter-spacing: 0.32em;
-      padding: 8px 0;
+      padding: 10px 0;
+      color: var(--gold);
+    }
+    nav.top .menu a:hover,
+    nav.top .menu a:active {
+      color: var(--cream);
     }
   }
 
