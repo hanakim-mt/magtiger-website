@@ -1255,6 +1255,47 @@
     section { padding: 80px 0; }
     .wrap, .wrap-wide { padding: 0 24px; }
   }
+/* Language switcher */
+nav.top .menu { align-items: center; }
+nav.top .lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 24px;
+  margin-left: 8px;
+  border-left: 1px solid rgba(190, 150, 80, 0.25);
+}
+nav.top .lang-switch a {
+  font-family: var(--f-sans);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--text-light-muted);
+  transition: color 0.3s ease;
+  text-transform: none;
+}
+nav.top .lang-switch a:hover { color: var(--cream); }
+nav.top .lang-switch a.active {
+  color: var(--gold);
+  font-weight: 500;
+}
+nav.top .lang-switch .sep {
+  color: rgba(190, 150, 80, 0.4);
+  font-size: 11px;
+}
+@media (max-width: 800px) {
+  nav.top .lang-switch {
+    border-left: none;
+    border-top: 1px solid rgba(190, 150, 80, 0.25);
+    padding-left: 0;
+    padding-top: 28px;
+    margin-top: 12px;
+    margin-left: 0;
+  }
+  nav.top .lang-switch a {
+    font-size: 14px;
+    letter-spacing: 0.2em;
+  }
+}
 </style>
 </head>
 <body>
@@ -1279,6 +1320,11 @@
     <a href="#network">Network</a>
     <a href="#principal">Principal</a>
     <a href="#contact">Contact</a>
+       <span class="lang-switch">
+  <a href="/" hreflang="en" class="active" aria-current="page">EN</a>
+  <span class="sep">·</span>
+  <a href="/ko/" hreflang="ko">한국어</a>
+</span>
   </div>
 </nav>
 
