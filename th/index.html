@@ -870,21 +870,22 @@
   .value-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto 1fr auto auto auto;
     gap: 0;
     margin-top: 72px;
     border-top: 3px solid var(--gold);
-    align-items: stretch;
   }
-  .value-grid > .value-col { height: 100%; align-self: stretch; }
+  .value-grid > .value-col {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 6;
+  }
   .value-col {
     padding: 44px 36px;
     border-right: 1px solid var(--rule-soft);
-    display: flex;
-    flex-direction: column;
     min-height: 460px;
   }
-  .value-col .value-copy { flex-grow: 1; }
-  .value-col:last-child { border-right: none; }
+    .value-col:last-child { border-right: none; }
   .value-num {
     font-family: var(--f-serif);
     font-size: 56px;
@@ -1595,7 +1596,7 @@
         <p class="value-copy">
           ผู้ตัดสินใจอยู่ที่โซล โตเกียว หรือเซี่ยงไฮ้ แต่ลูกค้าอยู่ที่สิงคโปร์ กรุงเทพฯ หรือดูไบ ช่องว่างระหว่างสำนักงานใหญ่กับตลาดจริงมักเป็นอุปสรรคสำคัญของการเติบโตในต่างประเทศ องค์กรที่ประสบความสำเร็จในระดับสากลไม่ได้เพียงส่งกลยุทธ์จากส่วนกลาง แต่สร้างความเข้าใจตลาดผ่านทีมงาน ผู้นำ และการดำเนินงานที่อยู่ใกล้ลูกค้าจริง เพื่อให้การตัดสินใจสอดคล้องกับความต้องการของแต่ละตลาด
         </p>
-        <div style="width: 56px; height: 2px; background: var(--gold); margin: auto 0 14px;"></div>
+        <div style="width: 56px; height: 2px; background: var(--gold); margin: 28px 0 14px;"></div>
         <div style="font-family: var(--f-sans); font-size: 10px; font-weight: 400; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 10px;">What we've done</div>
         <p style="font-family: var(--f-serif); font-style: italic; font-size: 15px; line-height: 1.55; color: var(--text-dark); margin: 0;">
           สร้างและพัฒนา Cosmax Thailand ตั้งแต่การจัดตั้งกิจการและขอรับการส่งเสริมการลงทุน จนถึงการส่งออกเชิงพาณิชย์ครั้งแรก พร้อมผลักดันการเติบโตของธุรกิจจาก 170 ล้านบาท สู่ 750 ล้านบาท ภายในระยะเวลา 3 ปี ความสำเร็จดังกล่าวเกิดจากการบริหารงานและการตัดสินใจที่ใกล้ชิดกับตลาดไทยอย่างแท้จริง
@@ -1608,7 +1609,7 @@
         <p class="value-copy">
           สินค้าและเทคโนโลยีที่ดีอาจเปิดประตูสู่ตลาดใหม่ได้ แต่ความเข้าใจผู้บริโภคต่างหากที่เป็นตัวกำหนดความสำเร็จในระยะยาว หลายองค์กรระดับโลกประสบความสำเร็จจากการปรับตัวให้เข้ากับพฤติกรรมและวัฒนธรรมของตลาดปลายทาง ไม่ใช่จากการยึดติดกับสูตรสำเร็จเดิม ความเข้าใจเชิงลึกต่อผู้บริโภคจึงกลายเป็นข้อได้เปรียบทางการแข่งขันที่สำคัญกว่าคุณสมบัติของสินค้าเพียงอย่างเดียว นี่คือช่องว่างที่ธุรกิจความงามในเอเชียจำนวนมากยังไม่ได้ลงทุนอย่างจริงจัง
         </p>
-        <div style="width: 56px; height: 2px; background: var(--gold); margin: auto 0 14px;"></div>
+        <div style="width: 56px; height: 2px; background: var(--gold); margin: 28px 0 14px;"></div>
         <div style="font-family: var(--f-sans); font-size: 10px; font-weight: 400; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 10px;">What we've done</div>
         <p style="font-family: var(--f-serif); font-style: italic; font-size: 15px; line-height: 1.55; color: var(--text-dark); margin: 0;">
           ปรับแนวทางการนำเสนอจุดแข็งของผู้ผลิตเกาหลีสำหรับเจ้าของแบรนด์ในเอเชียตะวันออกเฉียงใต้ จากการเน้นคุณภาพและนวัตกรรมของสูตรผลิตภัณฑ์ ไปสู่การเน้นความพร้อมด้านการรับรองมาตรฐานในภูมิภาคอาเซียน และความสามารถในการรองรับช่องทางจัดจำหน่ายของแต่ละประเทศ
@@ -1621,7 +1622,7 @@
         <p class="value-copy">
           ธุรกิจที่ดีไม่ได้รับการยอมรับจากคุณภาพเพียงอย่างเดียว แต่ต้องสามารถสื่อสารคุณค่าและศักยภาพของตนเองให้ผู้ลงทุนมองเห็นได้อย่างชัดเจน บริษัทเอเชียจำนวนมาก โดยเฉพาะในเกาหลี มีความสามารถและความเชี่ยวชาญในระดับสูง แต่ยังขาดกลไกในการถ่ายทอดจุดแข็งเหล่านั้นสู่สายตาของนักลงทุน นี่ไม่ใช่ภาพจำหรือความเข้าใจผิด หากแต่เป็นข้อจำกัดที่เกิดขึ้นจริงในระดับโครงสร้างทางธุรกิจ
         </p>
-        <div style="width: 56px; height: 2px; background: var(--gold); margin: auto 0 14px;"></div>
+        <div style="width: 56px; height: 2px; background: var(--gold); margin: 28px 0 14px;"></div>
         <div style="font-family: var(--f-sans); font-size: 10px; font-weight: 400; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 10px;">What we've done</div>
         <p style="font-family: var(--f-serif); font-style: italic; font-size: 15px; line-height: 1.55; color: var(--text-dark); margin: 0;">
           ปรับการสื่อสารคุณค่าและศักยภาพของบริษัทในพอร์ตการลงทุนของกองทุนญี่ปุ่น เพื่อรองรับการขายกิจการให้แก่นักลงทุนเชิงกลยุทธ์ ส่งผลให้สามารถดำเนินธุรกรรมได้สำเร็จภายใน 33 เดือน
@@ -1680,11 +1681,11 @@
         </div>
         <div class="row">
           <div class="row-label">Asia Network</div>
-          <div class="row-value">เครือข่ายผู้ผลิตในประเทศเป็นหลัก</div>
+          <div class="row-value">ผู้เชี่ยวชาญด้านการผลิตในระดับอุตสาหกรรม • เครือข่ายพันธมิตรทั่วเอเชีย</div>
         </div>
         <div class="row">
           <div class="row-label">Strategic Advisory</div>
-          <div class="row-value">ไม่ให้บริการ</div>
+          <div class="row-value">ผู้เชี่ยวชาญด้านการผลิตขนาดใหญ่ • ที่ปรึกษาด้านกลยุทธ์ธุรกิจ</div>
         </div>
       </article>
 
@@ -1699,15 +1700,15 @@
         </div>
         <div class="row">
           <div class="row-label">Relationship</div>
-          <div class="row-value">ผู้ให้บริการ → แบรนด์</div>
+          <div class="row-value">ผู้เชี่ยวชาญด้านการสร้างแบรนด์ • เครือข่ายความสัมพันธ์ทางธุรกิจ</div>
         </div>
         <div class="row">
           <div class="row-label">Asia Network</div>
-          <div class="row-value">เน้นตะวันตก ครอบคลุมเอเชียจำกัด</div>
+          <div class="row-value">บริษัทด้านการสร้างแบรนด์ • เครือข่ายพันธมิตรทางธุรกิจทั่วเอเชีย</div>
         </div>
         <div class="row">
           <div class="row-label">Strategic Advisory</div>
-          <div class="row-value">เฉพาะกลยุทธ์แบรนด์เท่านั้น</div>
+          <div class="row-value">บริษัทด้านการสร้างแบรนด์ • บริการให้คำปรึกษาด้านกลยุทธ์ธุรกิจ</div>
         </div>
       </article>
 
@@ -1719,11 +1720,11 @@
 
         <div class="row">
           <div class="row-label">Core Value</div>
-          <div class="row-value">เครือข่ายความเชื่อมั่น 15 ปี — K/J/SEA/จีน</div>
+          <div class="row-value">ผู้เชื่อมโยงโอกาสทางธุรกิจ • คุณค่าหลัก</div>
         </div>
         <div class="row">
           <div class="row-label">Relationship</div>
-          <div class="row-value">Strategic Partner ↔ Partner</div>
+          <div class="row-value">ผู้เชื่อมโยงธุรกิจ • รูปแบบความร่วมมือ</div>
         </div>
         <div class="row">
           <div class="row-label">Asia Network</div>
@@ -1731,7 +1732,7 @@
         </div>
         <div class="row">
           <div class="row-label">Strategic Advisory</div>
-          <div class="row-value">M&A · Exit · OBM · Channel — ครบทุกมิติ</div>
+          <div class="row-value">ผู้เชื่อมโยงธุรกิจ • ที่ปรึกษาด้านกลยุทธ์ธุรกิจ</div>
         </div>
       </article>
 
@@ -1800,7 +1801,7 @@
     <h2 class="section-title fade-up">How We Work — <em>Live Examples</em></h2>
 
     <p class="reality-intro fade-up" style="font-family: var(--f-serif); font-size: clamp(16px, 1.3vw, 19px); line-height: 1.6; margin: 24px 0 56px; text-align: left; color: var(--text-dark-muted); font-style: italic;">
-      เคสปกปิดชื่อเพื่อรักษาความลับของลูกค้า — แต่เปิดเผยกลไกของดีลอย่างชัดเจน.
+      กรณีศึกษาที่มีการปกปิดข้อมูลเพื่อรักษาความลับทางธุรกิจแต่เปิดเผยกลไกของดีลอย่างชัดเจน.
     </p>
 
     <div class="value-grid value-grid--two">
@@ -1811,10 +1812,10 @@
         <h3 class="value-title">Project Tiger</h3>
         <p class="value-copy" style="margin-bottom: 12px;">
           <strong style="font-style: normal;">Mode:</strong> Growth Partnership<br>
-          <strong style="font-style: normal;">Subject:</strong> บริษัทย่อยด้านการบรรจุเครื่องสำอางในไทยของ Conglomerate ญี่ปุ่น
+          <strong style="font-style: normal;">Subject:</strong> บริษัทย่อยด้านการผลิตและบรรจุเครื่องสำอางในประเทศไทยของกลุ่มธุรกิจขนาดใหญ่จากประเทศญี่ปุ่น
         </p>
         <p class="value-copy">
-          บทบาท Operating Partner &mdash; ฝังตัวในกลยุทธ์ยอดขาย การเปิดลูกค้าใหม่ และการดำเนินดีลข้ามพรมแดน. สร้างโครงสร้างฝ่ายขาย ปรับ Narrative และเปิดใช้งานเครือข่ายไปพร้อมกัน.
+          ทำงานร่วมกับองค์กรในฐานะพันธมิตรทางธุรกิจ โดยมีส่วนสำคัญในการขยายฐานลูกค้า พัฒนาระบบงานขาย และสร้างโอกาสทางธุรกิจระหว่างประเทศ
         </p>
         <div class="value-audience">
           2025 &ndash; ปัจจุบัน · เป้าหมาย: ขยาย ODM Export Run-rate 3&times; ภายในปี 2027
@@ -1827,10 +1828,10 @@
         <h3 class="value-title">Project Pivot</h3>
         <p class="value-copy" style="margin-bottom: 12px;">
           <strong style="font-style: normal;">Mode:</strong> Transaction Execution<br>
-          <strong style="font-style: normal;">Subject:</strong> ODM ใน SEA · บริษัทในพอร์ตของกองทุน PE ญี่ปุ่น
+          <strong style="font-style: normal;">Subject:</strong> ผู้ผลิตและพัฒนาเครื่องสำอางในเอเชียตะวันออกเฉียงใต้ • บริษัทที่อยู่ภายใต้การลงทุนของกองทุนจากประเทศญี่ปุ่น
         </p>
         <p class="value-copy">
-          กลยุทธ์ Cross-border PMI, การปรับโครงสร้าง KPI และการดำเนิน Strategic Exit. ยอดส่งออก ODM สะสมเติบโต 3&times; ภายใน 33 เดือน.
+          ปรับโครงสร้างการบริหารและระบบการดำเนินงาน พร้อมสนับสนุนการส่งต่อกิจการให้แก่นักลงทุนเชิงกลยุทธ์
         </p>
         <div class="value-audience">
           Strategic Exit ให้ผู้ซื้อชาวญี่ปุ่น · ปิดดีลแล้ว
@@ -1866,11 +1867,11 @@
       </div>
       <div class="country-card fade-up">
         <div class="name">Japan</div>
-        <div class="note">การบรรจุ Aerosol และของเหลวที่แม่นยำ, วิศวกรรมแพ็กเกจจิ้งขั้นสูง, การจัดการมาตรฐานส่งออก</div>
+        <div class="note">การบรรจุผลิตภัณฑ์สเปรย์และของเหลวที่ต้องการความแม่นยำสูง การพัฒนาบรรจุภัณฑ์คุณภาพสูง และความเชี่ยวชาญด้านมาตรฐานการส่งออก</div>
       </div>
       <div class="country-card fade-up">
         <div class="name">Thailand</div>
-        <div class="note">การรับจ้างบรรจุ Aerosol และเครื่องสำอาง, การผลิตของใช้ส่วนบุคคล, การขออนุญาต ASEAN</div>
+        <div class="note">การผลิตและบรรจุผลิตภัณฑ์สเปรย์และเครื่องสำอาง การผลิตผลิตภัณฑ์ดูแลร่างกาย และความเชี่ยวชาญด้านกฎระเบียบของตลาดอาเซียน</div>
       </div>
       <div class="country-card fade-up">
         <div class="name">China</div>
@@ -1890,7 +1891,7 @@
       </div>
       <div class="country-card fade-up">
         <div class="name">Vietnam</div>
-        <div class="note">ไปป์ไลน์ ODM ที่เติบโต, ความสัมพันธ์กับเจ้าของแบรนด์ระดับท็อป, ที่ปรึกษาการเปลี่ยนสู่ OBM</div>
+        <div class="note">เครือข่ายผู้ผลิตที่กำลังขยายตัว ความสัมพันธ์กับเจ้าของแบรนด์ชั้นนำ และการพัฒนาแบรนด์ของตนเอง</div>
       </div>
       <div class="country-card fade-up">
         <div class="name">Africa / Middle East</div>
